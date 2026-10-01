@@ -6,7 +6,7 @@ siguiendo [RESKIN.md](RESKIN.md). No se ha tocado HTML, CSS ni JS de la
 plantilla, solo `negocio.json`, `marca/` y `media/`.
 
 - **Local:** `node scripts/servir.mjs` → http://127.0.0.1:4191/ (con los mandos de la reunión: `/?revision`).
-- **Estado (2026-10-01):** en local, **sin publicar**, sin repo ni Pages. `indexar: false`.
+- **Estado (2026-10-01):** publicada en https://alvarotaiagu.github.io/elhogardelperro-web/ (repo `alvarotaiagu/elhogardelperro-web`), con los mandos de la reunión. `noindex` en todas las páginas. No está en el portfolio Rúa.
 - **Verificación:** `node scripts/verificar.mjs --capturas` → 109/109.
 
 ---
