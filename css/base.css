@@ -194,8 +194,12 @@ button { font: inherit; }
   stroke-dasharray: 1; stroke-dashoffset: 1;
 }
 .cortina__nombre {
-  margin: 0;
-  font: 600 .74rem/1 var(--f-texto);
+  /* nombres largos parten en dos líneas en móvil: centradas, equilibradas y con
+     margen; el padding izquierdo compensa el espaciado que sobra tras la última letra */
+  margin: 0; max-width: min(34rem, 100vw - 3rem);
+  padding-left: .32em;
+  text-align: center; text-wrap: balance;
+  font: 600 .74rem/1.7 var(--f-texto);
   letter-spacing: .32em; text-transform: uppercase;
   color: var(--sobre-cortina);
   opacity: 0;
