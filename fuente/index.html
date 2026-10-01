@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<!--
+  GENERADO por scripts/aplicar.mjs desde fuente/index.html + negocio.json + marca/.
+  No editar este archivo a mano: se sobrescribe. Editar fuente/ y volver a aplicar.
+{{#demo}}
+  SITIO DE DEMOSTRACIÓN. {{nombre}} es un negocio ficticio; los datos, fotografías
+  y opiniones son de muestra.
+{{/demo}}
+  Concepto: «La marca manda». El motivo de la web es el isotipo del cliente:
+  la cortina, la ventana del hero, el cursor, los separadores y el indicador
+  de «abierto ahora». Cambiar de logo cambia toda la firma sin rediseñar.
+  [MANDO DE MAQUETA] inicio
+  AVISO — Esta maqueta lleva MANDOS DE DEMOSTRACIÓN (versión, paleta y marca),
+  visibles solo con ?revision. NO DEBEN VIAJAR AL CLIENTE: python scripts/quitar_mandos.py
+  [MANDO DE MAQUETA] fin
+-->
+<html lang="{{idioma}}" class="sin-js densidad-{{marca.densidad}}" data-personalidad="{{marca.personalidad}}" data-fondo="{{marca.polaridad}}" data-logo-oscuro="{{marca.logo_oscuro}}" data-duotono="{{marca.duotono}}" data-paleta="a" data-marca="{{marca.slug}}">
+<head>
+{{> cabeza}}
+<title>{{titulo_pagina}}</title>
+<meta name="description" content="{{descripcion}}">
+<link rel="canonical" href="{{url}}">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{{titulo_pagina}}">
+<meta property="og:description" content="{{descripcion}}">
+<meta property="og:image" content="{{og_imagen}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="es_ES">
+<script type="application/ld+json">{{{schema_json}}}</script>
+</head>
+<body>
+
+<a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+{{> iconos}}
+{{{sprite}}}
+</svg>
+
+<!-- ───────── Cortina: el isotipo se dibuja y la página aparece a través de él ───────── -->
+<div class="cortina" id="cortina" aria-hidden="true" data-vb-hueco="{{cortina.hueco_vb}}">
+  <svg class="cortina__lienzo" id="cortina-lienzo" preserveAspectRatio="none">
+    <defs>
+      <!-- máscara en userSpaceOnUse con x=0 y=0: por defecto empieza en −10 %.
+           Blanco = se ve el telón, negro = hueco: aquí el color es la lógica de la máscara, no la marca -->
+      <mask id="cortina-mascara" maskUnits="userSpaceOnUse" x="0" y="0" width="100%" height="100%">
+        <rect x="0" y="0" width="100%" height="100%" fill="white"/>
+        <path id="cortina-hueco" d="{{cortina.hueco}}" fill="black" transform="scale(0)"/>
+        <circle id="cortina-circulo" cx="0" cy="0" r="0" fill="black"/>
+      </mask>
+    </defs>
+    <rect class="cortina__telon" x="0" y="0" width="100%" height="100%" mask="url(#cortina-mascara)"/>
+  </svg>
+  <div class="cortina__centro">
+    <svg class="cortina__isotipo" id="cortina-isotipo" viewBox="{{cortina.vb}}" overflow="visible">
+      <path class="cortina__relleno" d="{{cortina.silueta}}"/>
+      <path class="cortina__trazo" d="{{cortina.silueta}}" pathLength="1"/>
+      {{#cortina.detalles}}<path class="cortina__trazo cortina__trazo--detalle" d="{{.}}" pathLength="1"/>{{/cortina.detalles}}
+    </svg>
+    <p class="cortina__nombre" data-nombre="nombre">{{nombre}}</p>
+  </div>
+</div>
+
+{{> cabecera}}
+
+<main id="contenido">
+
+  <!-- ═════════════ Hero: la foto vive dentro del isotipo ═════════════ -->
+  <section class="hero" id="inicio" aria-labelledby="hero-titulo">
+    <div class="hero__texto">
+      <p class="estado hero__estado" data-estado>
+        <svg class="estado__marca" aria-hidden="true" viewBox="{{marca.isotipo_vb}}" data-vb="isotipo"><use href="#isotipo-mono-{{marca.slug}}" data-uso="isotipo-mono"/></svg>
+        <span class="estado__texto" data-estado-texto>{{horario_hoy_estatico}}</span>
+      </p>
+      <h1 class="hero__titulo" id="hero-titulo" data-revelar="letras" data-nombre="nombre_corto" style="--n: {{h1_n}}">{{nombre_corto}}</h1>
+      <p class="hero__lema">{{lema}}</p>
+      <p class="hero__entrada">{{entradilla}}</p>
+      <div class="hero__acciones">
+        <a class="boton boton--cita boton--grande iman" href="{{cita.href}}"{{#cita.externa}} target="_blank" rel="noopener"{{/cita.externa}}>
+          <svg width="20" height="20" aria-hidden="true"><use href="#{{cita.icono}}"/></svg><span>{{cita.texto}}</span>
+        </a>
+        <a class="enlace" href="{{como_llegar_url}}" target="_blank" rel="noopener">Cómo llegar <svg width="18" height="18" aria-hidden="true"><use href="#i-flecha"/></svg></a>
+      </div>
+      {{#urg.telefono_visible}}<p class="hero__urgencias"><span>{{urg.etiqueta}}</span> <a href="{{urg.tel_href}}">{{urg.telefono}}</a></p>{{/urg.telefono_visible}}
+    </div>
+
+    <div class="hero__ventana" id="ventana-hero">
+      <div class="ventana foto" id="ventana-recorte" style="clip-path: url(#ventana-caja-{{marca.slug}})" data-slug="{{marca.slug}}">
+        {{#hero_foto}}<img class="ventana__img" id="ventana-img" src="{{src}}" srcset="{{src800}} 800w, {{src}} 1600w" sizes="(max-width: 900px) 90vw, 100vw" width="{{ancho}}" height="{{alto}}" alt="{{alt}}" fetchpriority="high">{{/hero_foto}}
+        {{^hero_foto}}<div class="ventana__trama" id="ventana-img" aria-hidden="true">{{#trama}}<svg viewBox="0 0 120 120"><use href="#especie-{{id}}"/></svg>{{/trama}}</div>{{/hero_foto}}
+      </div>
+      <svg class="ventana__contorno" id="ventana-contorno" viewBox="{{marca.ventana_vb}}" aria-hidden="true" overflow="visible" data-vb="ventana"><use href="#silueta-{{marca.slug}}" data-uso="silueta"/></svg>
+    </div>
+    <p class="hero__baja" aria-hidden="true">Desliza</p>
+  </section>
+
+  <!-- ═════════════ Hoy en la clínica (solo versión sobria) ═════════════ -->
+  <section class="hoy" id="hoy" aria-labelledby="hoy-titulo">
+    <h2 class="hoy__titulo" id="hoy-titulo">Hoy en la clínica</h2>
+    <dl class="hoy__datos">
+      <div><dt>Ahora</dt><dd data-estado><span data-estado-texto>{{horario_hoy_estatico}}</span></dd></div>
+      <div><dt>Horario de hoy</dt><dd data-hoy-franjas>{{horario_resumen_corto}}</dd></div>
+      {{#urg.telefono_visible}}<div><dt>{{urg.etiqueta}}</dt><dd><a href="{{urg.tel_href}}">{{urg.telefono}}</a></dd></div>{{/urg.telefono_visible}}
+      <div><dt>Cita</dt><dd><a href="{{cita.href}}"{{#cita.externa}} target="_blank" rel="noopener"{{/cita.externa}}>{{cita.corto}}</a></dd></div>
+    </dl>
+  </section>
+
+  <!-- ═════════════ Especies ═════════════ -->
+  <section class="especies" id="especies" aria-labelledby="especies-titulo">
+    <div class="especies__cabeza">
+      <p class="rotulo">A quién atendemos</p>
+      <h2 class="titulo-seccion" id="especies-titulo" data-revelar="palabras">{{especies_titulo}}</h2>
+      <p class="especies__cifra"><span class="especies__n" data-contador="{{especies_lista.length}}">{{especies_lista.length}}</span> {{especies_cifra_texto}}</p>
+    </div>
+    <ul class="especies__lista" style="--total: {{especies_lista.length}}">
+      {{#especies_lista}}<li class="especie">
+        <span class="especie__marco"><svg class="especie__dibujo" viewBox="0 0 120 120" aria-hidden="true"><use href="#especie-{{id}}"/></svg></span>
+        <span class="especie__nombre">{{nombre}}</span>
+      </li>{{/especies_lista}}
+    </ul>
+  </section>
+
+  {{#modulos.marquee}}
+  <div class="cinta" data-modulo="marquee" aria-label="Servicios">
+    <div class="cinta__pista" id="cinta-pista">
+      <ul class="cinta__grupo">
+        {{#servicios_activos}}<li>{{titulo}}<svg class="cinta__sep" viewBox="{{marca.isotipo_vb}}" aria-hidden="true" data-vb="isotipo"><use href="#isotipo-mono-{{marca.slug}}" data-uso="isotipo-mono"/></svg></li>{{/servicios_activos}}
+      </ul>
+    </div>
+  </div>
+  {{/modulos.marquee}}
+
+  <!-- ═════════════ Servicios: pila anclada ═════════════ -->
+  <section class="servicios" id="servicios" aria-labelledby="servicios-titulo">
+    <div class="servicios__cabeza">
+      <p class="rotulo">Servicios</p>
+      <h2 class="titulo-seccion" id="servicios-titulo" data-revelar="palabras">Todo lo que necesita, en la misma casa.</h2>
+      <p class="servicios__entrada">{{servicios_activos.length}} servicios con el mismo cuidado. Si no ves lo que buscas, pregúntanos.</p>
+    </div>
+    <ol class="pila" id="pila">
+      {{#servicios_activos}}<li class="pila__item">
+        <article class="tarjeta">
+          <svg class="tarjeta__marca" viewBox="{{marca.isotipo_vb}}" aria-hidden="true" data-vb="isotipo"><use href="#isotipo-mono-{{marca.slug}}" data-uso="isotipo-mono"/></svg>
+          <div class="tarjeta__cabeza">
+            <span class="tarjeta__numero">{{num}}</span>
+            <h3>{{titulo}}</h3>
+          </div>
+          <div class="tarjeta__cuerpo">
+            <p>{{texto}}</p>
+            <ul class="tarjeta__incluye">{{#incluye}}<li><svg width="16" height="16" aria-hidden="true"><use href="#i-check"/></svg>{{.}}</li>{{/incluye}}</ul>
+          </div>
+        </article>
+      </li>{{/servicios_activos}}
+    </ol>
+    <div class="servicios__pie">
+      <p>¿Dudas con algún servicio? Te lo explicamos por teléfono antes de venir.</p>
+      <a class="boton boton--linea iman" href="{{tel_href}}"><svg width="18" height="18" aria-hidden="true"><use href="#i-telefono"/></svg><span>{{telefono}}</span></a>
+    </div>
+  </section>
+
+  {{#urg.activo}}
+  <!-- ═════════════ Urgencias ═════════════ -->
+  <section class="urgencias zona-oscura" id="urgencias" data-modulo="urgencias" aria-labelledby="urgencias-titulo">
+    <svg class="urgencias__marca" viewBox="{{marca.isotipo_vb}}" aria-hidden="true" data-vb="isotipo"><use href="#isotipo-mono-{{marca.slug}}" data-uso="isotipo-mono"/></svg>
+    <div class="urgencias__texto">
+      <p class="rotulo">Urgencias</p>
+      <h2 class="titulo-seccion" id="urgencias-titulo" data-revelar="palabras">{{urg.titulo}}</h2>
+      <p class="urgencias__entrada">{{urg.texto}}</p>
+    </div>
+    <div class="urgencias__llamar">
+      <a class="urgencias__numero iman" href="{{urg.tel_href}}"><svg width="30" height="30" aria-hidden="true"><use href="#i-telefono"/></svg>{{urg.telefono}}</a>
+      <p class="urgencias__horario">{{urg.horario}}</p>
+    </div>
+  </section>
+  {{/urg.activo}}
+
+  {{#modulos.primera_visita}}
+  <!-- ═════════════ Primera visita ═════════════ -->
+  <section class="visita1" id="primera-visita" data-modulo="primera_visita" aria-labelledby="visita1-titulo">
+    <div class="visita1__cabeza">
+      <p class="rotulo">Tu primera visita</p>
+      <h2 class="titulo-seccion" id="visita1-titulo" data-revelar="palabras">Así es venir por primera vez.</h2>
+    </div>
+    <ol class="pasos">
+      <li class="pasos__linea" aria-hidden="true"><span></span></li>
+      {{#primera_visita}}<li class="paso">
+        <span class="paso__num">{{num}}</span>
+        <h3>{{titulo}}</h3>
+        <p>{{texto}}</p>
+      </li>{{/primera_visita}}
+    </ol>
+  </section>
+  {{/modulos.primera_visita}}
+
+  {{#modulos.equipo}}
+  <!-- ═════════════ Equipo ═════════════ -->
+  <section class="equipo" id="equipo" data-modulo="equipo" aria-labelledby="equipo-titulo">
+    <div class="equipo__cabeza">
+      <p class="rotulo">Equipo</p>
+      <h2 class="titulo-seccion" id="equipo-titulo" data-revelar="palabras">Las personas que te van a atender.</h2>
+      {{#anio_apertura}}<p class="equipo__desde">Desde <span>{{anio_apertura}}</span> en {{direccion.localidad}}.</p>{{/anio_apertura}}
+    </div>
+    <ul class="equipo__lista">
+      {{#equipo}}<li class="persona">
+        <span class="persona__medallon">
+          {{#foto}}<img src="{{foto}}" width="320" height="320" alt="{{nombre}}" loading="lazy">{{/foto}}
+          {{^foto}}<span class="persona__iniciales" aria-hidden="true">{{iniciales}}</span>{{/foto}}
+          <svg class="persona__aro" viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="48" pathLength="1"/></svg>
+        </span>
+        <h3 class="persona__nombre">{{nombre}}</h3>
+        <p class="persona__cargo">{{cargo}}</p>
+        {{#colegiado}}<p class="persona__colegiado">{{colegiado}}</p>{{/colegiado}}
+      </li>{{/equipo}}
+    </ul>
+  </section>
+  {{/modulos.equipo}}
+
+  {{#modulos.instalaciones}}
+  <!-- ═════════════ Instalaciones ═════════════ -->
+  <section class="instalaciones" id="instalaciones" data-modulo="instalaciones" aria-labelledby="instalaciones-titulo">
+    <div class="instalaciones__cabeza">
+      <p class="rotulo">La clínica</p>
+      <h2 class="titulo-seccion" id="instalaciones-titulo" data-revelar="palabras">Pensada para que esperen tranquilos.</h2>
+    </div>
+    <ul class="galeria">
+      {{#instalaciones_fotos}}<li class="galeria__item">
+        <figure class="lamina">
+          <span class="lamina__marco foto"><img src="{{src}}" srcset="{{src800}} 800w, {{src}} 1600w" sizes="(max-width: 900px) 80vw, 40vw" width="{{ancho}}" height="{{alto}}" alt="{{alt}}" loading="lazy"></span>
+          <figcaption>{{pie}}</figcaption>
+        </figure>
+      </li>{{/instalaciones_fotos}}
+    </ul>
+  </section>
+  {{/modulos.instalaciones}}
+
+  {{#modulos.resenas}}
+  <!-- ═════════════ Opiniones ═════════════ -->
+  <section class="resenas zona-oscura" id="opiniones" data-modulo="resenas" aria-labelledby="resenas-titulo">
+    <div class="resenas__nota">
+      <p class="rotulo">Opiniones</p>
+      <p class="resenas__cifra"><span data-contador="{{resenas.nota}}" data-decimales="1">{{resenas.nota_texto}}</span><small>de 5</small></p>
+      <p class="resenas__estrellas" aria-label="{{resenas.nota_texto}} de 5">
+        <span class="estrellas" style="--relleno: {{resenas.relleno}}%">
+          <span class="estrellas__capa estrellas__fondo">{{#resenas.cinco}}<svg width="22" height="22" aria-hidden="true"><use href="#i-estrella"/></svg>{{/resenas.cinco}}</span>
+          <span class="estrellas__capa estrellas__lleno">{{#resenas.cinco}}<svg width="22" height="22" aria-hidden="true"><use href="#i-estrella"/></svg>{{/resenas.cinco}}</span>
+        </span>
+      </p>
+      <p class="resenas__fuente">{{resenas.fuente_texto}}</p>
+      {{#resenas.enlace}}<a class="boton boton--claro iman" href="{{resenas.enlace}}" target="_blank" rel="noopener"><span>{{resenas.enlace_texto}}</span><svg width="18" height="18" aria-hidden="true"><use href="#i-flecha"/></svg></a>{{/resenas.enlace}}
+    </div>
+    <div class="resenas__citas">
+      <h2 class="titulo-seccion" id="resenas-titulo" data-revelar="palabras">Lo que cuentan al salir.</h2>
+      <ul class="citas">
+        {{#resenas.citas}}<li class="cita">
+          <blockquote><p>{{texto}}</p></blockquote>
+          <p class="cita__autor">{{autor}}{{#detalle}}<span>{{detalle}}</span>{{/detalle}}</p>
+        </li>{{/resenas.citas}}
+      </ul>
+    </div>
+  </section>
+  {{/modulos.resenas}}
+
+  {{#modulos.preguntas}}
+  <!-- ═════════════ Preguntas frecuentes ═════════════ -->
+  <section class="preguntas" id="preguntas" data-modulo="preguntas" aria-labelledby="preguntas-titulo">
+    <div class="preguntas__cabeza">
+      <p class="rotulo">Preguntas frecuentes</p>
+      <h2 class="titulo-seccion" id="preguntas-titulo" data-revelar="palabras">Lo que nos preguntáis antes de venir.</h2>
+    </div>
+    <div class="preguntas__lista">
+      {{#preguntas}}<details class="pregunta">
+        <summary><span>{{p}}</span><svg width="22" height="22" aria-hidden="true"><use href="#i-mas"/></svg></summary>
+        <div class="pregunta__respuesta"><p>{{r}}</p></div>
+      </details>{{/preguntas}}
+    </div>
+  </section>
+  {{/modulos.preguntas}}
+
+  <!-- ═════════════ Visita: horario, datos y mapa ═════════════ -->
+  <section class="visita" id="visita" aria-labelledby="visita-titulo">
+    <div class="visita__datos">
+      <p class="rotulo">Horario y contacto</p>
+      <h2 class="titulo-seccion" id="visita-titulo" data-revelar="palabras">Ven a vernos.</h2>
+      <p class="estado visita__estado" data-estado>
+        <svg class="estado__marca" aria-hidden="true" viewBox="{{marca.isotipo_vb}}" data-vb="isotipo"><use href="#isotipo-mono-{{marca.slug}}" data-uso="isotipo-mono"/></svg>
+        <span class="estado__texto" data-estado-texto>{{horario_hoy_estatico}}</span>
+      </p>
+      <table class="horario">
+        <caption class="visualmente-oculto">Horario semanal</caption>
+        <tbody>
+          {{#horario_filas}}<tr data-dia="{{idx}}"><th scope="row">{{dia}}</th><td>{{texto}}</td></tr>{{/horario_filas}}
+        </tbody>
+      </table>
+      <ul class="datos">
+        <li><svg width="22" height="22" aria-hidden="true"><use href="#i-mapa"/></svg><span>{{direccion.calle}}<br>{{direccion.cp}} {{direccion.localidad}} ({{direccion.provincia}})</span></li>
+        <li><svg width="22" height="22" aria-hidden="true"><use href="#i-telefono"/></svg><a href="{{tel_href}}">{{telefono}}</a></li>
+        {{#wa}}<li><svg width="22" height="22" aria-hidden="true"><use href="#i-whatsapp"/></svg><a href="{{wa.href}}" target="_blank" rel="noopener">WhatsApp {{wa.numero}}</a></li>{{/wa}}
+        <li><svg width="22" height="22" aria-hidden="true"><use href="#i-correo"/></svg><a href="mailto:{{email}}">{{email}}</a></li>
+        {{#aparcamiento}}<li><svg width="22" height="22" aria-hidden="true"><use href="#i-coche"/></svg><span>{{aparcamiento}}</span></li>{{/aparcamiento}}
+        {{#pagos}}<li><svg width="22" height="22" aria-hidden="true"><use href="#i-tarjeta"/></svg><span>{{pagos}}</span></li>{{/pagos}}
+      </ul>
+    </div>
+    <div class="visita__mapa">
+      <div class="mapa" id="mapa-consentimiento">
+        <svg class="mapa__marca" viewBox="{{marca.isotipo_vb}}" aria-hidden="true" data-vb="isotipo"><use href="#isotipo-mono-{{marca.slug}}" data-uso="isotipo-mono"/></svg>
+        <button class="boton boton--cita mapa__boton" id="mapa-boton" type="button" data-mapa="{{mapa_embed_url}}" data-titulo="Mapa: {{nombre}} en {{direccion.localidad}}"><svg width="18" height="18" aria-hidden="true"><use href="#i-mapa"/></svg><span>Ver el mapa</span></button>
+        <p class="mapa__nota">Al pulsar se carga Google Maps, que puede usar sus propias cookies.</p>
+      </div>
+      <a class="enlace visita__como" href="{{como_llegar_url}}" target="_blank" rel="noopener">Abrir en Google Maps <svg width="18" height="18" aria-hidden="true"><use href="#i-flecha"/></svg></a>
+    </div>
+  </section>
+
+</main>
+
+{{> pie}}
+
+<!-- [MANDO DE MAQUETA] inicio -->
+<div class="mando" id="mando" role="region" aria-label="Versiones de la web" hidden>
+  <p class="mando__titulo">Dos versiones de la misma web</p>
+  <div class="mando__grupo" role="group" aria-label="Versión">
+    <span class="mando__etiqueta">Versión</span>
+    <button type="button" data-densidad="marca" aria-pressed="true">La marca manda</button>
+    <button type="button" data-densidad="sobria" aria-pressed="false">Sobria</button>
+  </div>
+  <div class="mando__grupo" role="group" aria-label="Paleta">
+    <span class="mando__etiqueta">Color</span>
+    <button type="button" data-paleta="a" aria-pressed="true" aria-label="Paleta de la marca"><span class="mando__muestra" style="--m: var(--muestra-a)"></span>Marca</button>
+    <button type="button" data-paleta="b" aria-pressed="false" aria-label="Alternativa 1"><span class="mando__muestra" style="--m: var(--muestra-b)"></span>Alt. 1</button>
+    <button type="button" data-paleta="c" aria-pressed="false" aria-label="Alternativa 2"><span class="mando__muestra" style="--m: var(--muestra-c)"></span>Alt. 2</button>
+  </div>
+  <div class="mando__grupo" role="group" aria-label="Marca de prueba">
+    <span class="mando__etiqueta">Con otro logo</span>
+    {{#mando.marcas}}<button type="button" data-cambiar-marca="{{slug}}" aria-pressed="{{pulsado}}">{{nombre_corto}}</button>{{/mando.marcas}}
+  </div>
+</div>
+<script type="application/json" id="mando-marcas">{{{mando.json}}}</script>
+<!-- [MANDO DE MAQUETA] fin -->
+
+<script type="application/json" id="datos-negocio">{{{datos_json}}}</script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js" defer></script>
+<script src="js/main.js?v={{v.main}}" defer></script>
+</body>
+</html>

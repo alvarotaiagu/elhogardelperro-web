@@ -1,0 +1,160 @@
+{
+  "_leeme": "Datos del negocio. Tras cambiarlos: node scripts/aplicar.mjs. Guía de campos en RESKIN.md §4. Fuente de cada dato y lo pendiente: README.md.",
+
+  "demo": false,
+  "indexar": false,
+  "idioma": "es",
+  "url": "https://alvarotaiagu.github.io/elhogardelperro-web/",
+
+  "nombre": "Centro Veterinario El Hogar del Perro",
+  "nombre_corto": "El Hogar del Perro",
+  "lema": "Nos preocupamos por tu mascota.",
+  "entradilla": "Consulta, vacunas, cirugía y hospitalización para perros y gatos, y peluquería canina en la misma casa. En la calle Reyes Huertas, con cita previa.",
+  "anio_apertura": null,
+
+  "direccion": {
+    "calle": "Calle Reyes Huertas, 3",
+    "cp": "06008",
+    "localidad": "Badajoz",
+    "provincia": "Badajoz"
+  },
+  "mapa_consulta": "Centro Veterinario El Hogar del Perro, Calle Reyes Huertas 3, 06008 Badajoz",
+  "aparcamiento": null,
+  "pagos": null,
+
+  "telefono": "924 23 29 86",
+  "whatsapp": null,
+  "email": "cv.elhogardelperro@gmail.com",
+  "cita": { "via": "telefono", "enlace": null },
+
+  "horario": {
+    "lunes": [["09:30", "14:00"], ["17:30", "21:00"]],
+    "martes": [["09:30", "14:00"], ["17:30", "21:00"]],
+    "miercoles": [["09:30", "14:00"], ["17:30", "21:00"]],
+    "jueves": [["09:30", "14:00"], ["17:30", "21:00"]],
+    "viernes": [["09:30", "14:00"], ["17:30", "21:00"]],
+    "sabado": [],
+    "domingo": []
+  },
+  "cierres": [],
+
+  "especies": ["perro", "gato"],
+
+  "servicios": [
+    {
+      "id": "consulta", "activo": true,
+      "titulo": "Consulta veterinaria",
+      "texto": "Revisiones, diagnóstico y seguimiento de perros y gatos, con cita previa. Te explicamos qué tiene y qué toca hacer.",
+      "incluye": ["Perros y gatos", "Revisiones", "Seguimiento"]
+    },
+    {
+      "id": "vacunas", "activo": true,
+      "titulo": "Vacunas, desparasitación y microchip",
+      "texto": "El protocolo de vacunación y desparasitación desde cachorro, y la identificación con microchip y pasaporte.",
+      "incluye": ["Cachorros y gatitos", "Microchip", "Pasaporte"]
+    },
+    {
+      "id": "cirugia", "activo": true,
+      "titulo": "Cirugía",
+      "texto": "Esterilizaciones y cirugía de tejidos blandos, como los tumores de mama, con revisión después de la operación.",
+      "incluye": ["Esterilización", "Tumores de mama", "Revisión postoperatoria"]
+    },
+    {
+      "id": "hospitalizacion", "activo": true,
+      "titulo": "Hospitalización",
+      "texto": "Cuando hace falta quedarse unos días: medicación por vía, fluidoterapia y vigilancia hasta que se va a casa.",
+      "incluye": ["Fluidoterapia", "Medicación por vía", "Alta y seguimiento"]
+    },
+    {
+      "id": "diagnostico", "activo": true,
+      "titulo": "Analíticas y test rápidos",
+      "texto": "Analíticas y test en la propia clínica para leishmania, filaria, ehrlichia, anaplasma y los virus felinos.",
+      "incluye": ["Analítica", "Leishmania y filaria", "Virus felinos"]
+    },
+    {
+      "id": "boca", "activo": true,
+      "titulo": "Higiene bucal",
+      "texto": "Revisión de la boca, limpieza dental y extracción de las piezas que hagan falta.",
+      "incluye": ["Revisión bucal", "Limpieza dental", "Extracciones"]
+    },
+    {
+      "id": "peluqueria", "activo": true,
+      "titulo": "Peluquería canina",
+      "texto": "Baño y corte con cita previa, en la misma clínica donde ya conocen a tu perro.",
+      "incluye": ["Baño", "Corte", "Con cita previa"]
+    },
+    {
+      "id": "tienda", "activo": true,
+      "titulo": "Tienda",
+      "texto": "En la recepción tienes pienso, correas, juguetes y antiparasitarios para llevarte a casa.",
+      "incluye": ["Pienso", "Correas y juguetes", "Antiparasitarios"]
+    }
+  ],
+
+  "urgencias": {
+    "modo": "telefono",
+    "telefono": "678 616 026",
+    "horario": "Fuera del horario de consulta",
+    "texto": "Si es algo que no puede esperar, llama a este número y te decimos qué hacer."
+  },
+
+  "primera_visita": [
+    { "titulo": "Pide cita", "texto": "Llama al 924 23 29 86. Nos basta con su nombre, la especie y el motivo." },
+    { "titulo": "Trae lo que tengas", "texto": "Cartilla o pasaporte, informes anteriores y qué come y qué toma ahora." },
+    { "titulo": "Viaja tranquilo", "texto": "Gatos, en transportín; perros, con correa. Una toalla por encima del transportín ayuda." },
+    { "titulo": "Ven cinco minutos antes", "texto": "Para hacer la ficha sin prisas y que se acostumbre a los olores de la sala." }
+  ],
+
+  "equipo": [],
+
+  "hero_alt": "Un perro de pelo claro tumbado en un cojín de la tienda, con las correas colgadas detrás",
+  "instalaciones": [
+    { "foto": "media/instalaciones-1.jpg", "alt": "Un chihuahua de pie en la mesa de la sala de consulta, con los armarios y las estanterías detrás", "pie": "Consulta" },
+    { "foto": "media/instalaciones-2.jpg", "alt": "Un perro blanco y negro en la recepción, con las correas de la tienda y la puerta a la calle", "pie": "Recepción y tienda" },
+    { "foto": "media/instalaciones-3.jpg", "alt": "Una pastora alemana sentada delante de las jaulas de hospitalización", "pie": "Hospitalización" },
+    { "foto": "media/gato.jpg", "alt": "Un gato atigrado saliendo del transportín sobre la mesa de consulta", "pie": "Gatos" }
+  ],
+
+  "resenas": {
+    "nota": 4.5,
+    "recuento": 112,
+    "plataforma": "Google",
+    "enlace": "https://www.google.com/maps/search/?api=1&query=Centro+Veterinario+El+Hogar+del+Perro+Reyes+Huertas+3+Badajoz",
+    "citas": [
+      { "texto": "Nos atendieron enseguida y la veterinaria fue un amor con mi perrito. Todo fue rápido, fácil y con muchísimo cariño.", "autor": "Lucía", "detalle": "Opinión en Google" },
+      { "texto": "Es muy difícil encontrar un sitio que respete tanto a los gatos.", "autor": "Isabel", "detalle": "Opinión en Google" },
+      { "texto": "Llevo 6 años llevando a mis peludos allí. Empecé con mi perra Mika y ahora también llevo a mis 3 gatetes. El trato es espectacular, tratan a los animales con cariño y cuidado.", "autor": "Sandra", "detalle": "Opinión en Google" }
+    ]
+  },
+
+  "preguntas": [
+    { "p": "¿Hace falta pedir cita?", "r": "Sí, trabajamos con cita previa: llama al 924 23 29 86. Si es una urgencia, llama al 678 616 026." },
+    { "p": "¿Atendéis gatos?", "r": "Sí, perros y gatos." },
+    { "p": "¿Tenéis peluquería canina?", "r": "Sí, en la misma clínica y con cita previa." },
+    { "p": "¿Vendéis pienso y accesorios?", "r": "Sí: en la recepción hay pienso, correas, juguetes y antiparasitarios." },
+    { "p": "¿Sois la residencia canina?", "r": "No. Aquí está la clínica veterinaria y la peluquería; la residencia es otro centro." },
+    { "p": "¿Dónde anunciáis las campañas?", "r": "Las campañas de esterilización, identificación o test las anunciamos en Instagram y en Facebook." }
+  ],
+
+  "redes": {
+    "instagram": "https://www.instagram.com/hogarperro/",
+    "facebook": "https://www.facebook.com/elhogardelperro/"
+  },
+
+  "legal": {
+    "titular": "[PENDIENTE]",
+    "nif": "[PENDIENTE]",
+    "registro": null,
+    "responsable_clinico": null
+  },
+
+  "modulos": {
+    "marquee": true,
+    "urgencias": true,
+    "primera_visita": true,
+    "equipo": false,
+    "instalaciones": true,
+    "resenas": true,
+    "preguntas": true
+  }
+}

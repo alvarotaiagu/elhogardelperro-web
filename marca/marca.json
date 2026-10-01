@@ -1,0 +1,17 @@
+{
+  "_leeme": "Marca de la demo. Se regenera con scripts/marca-desde-logo.py; campos en RESKIN.md §3.",
+  "slug": "hogardelperro",
+  "personalidad": "cercana",
+  "pareja": "redondeada",
+  "colores": {
+    "fondo": "#F1F7FF",
+    "superficie": "#E2ECFA",
+    "tinta": "#0D1D32",
+    "acento": "#265691",
+    "acento2": "#A6C7F1"
+  },
+  "logo_en_oscuro": "mono",
+  "densidad": "marca",
+  "duotono": true,
+  "forma_hero": "isotipo"
+}

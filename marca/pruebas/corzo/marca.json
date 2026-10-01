@@ -1,0 +1,19 @@
+{
+  "_leeme": "Marca de PRUEBA: sirve al mando «Con otro logo» y al test de reskin. No es un cliente.",
+  "slug": "corzo",
+  "nombre": "O Corzo Hospital Veterinario",
+  "nombre_corto": "O Corzo",
+  "personalidad": "moderna",
+  "pareja": "geometrica-moderna",
+  "colores": {
+    "fondo": "#04160E",
+    "superficie": "#0B2218",
+    "tinta": "#EDF6F1",
+    "acento": "#B8CC5A",
+    "acento2": "#9AD3B8"
+  },
+  "logo_en_oscuro": "mono",
+  "densidad": "marca",
+  "duotono": true,
+  "forma_hero": "isotipo"
+}

@@ -1,0 +1,75 @@
+{
+  "_leeme": "Negocio de PRUEBA para el test de reskin (scripts/verificar.mjs §8). Casos límite a propósito: nombre largo, solo 2 especies, sin urgencias, solo 8 reseñas, sin fotos, cita por teléfono.",
+  "_sin_fotos": true,
+
+  "demo": true,
+  "indexar": false,
+  "idioma": "es",
+  "url": "https://alvarotaiagu.github.io/plantilla-veterinaria-web/",
+
+  "nombre": "Clínica Veterinaria Arxila de Bergantiños",
+  "nombre_corto": "Clínica Veterinaria Arxila de Bergantiños",
+  "lema": "Perros y gatos, de toda la vida, en el centro de Carballo.",
+  "entradilla": "Una consulta pequeña donde te conocen por tu nombre y conocen a tu animal por el suyo.",
+  "anio_apertura": 1998,
+
+  "direccion": { "calle": "Rúa da Fontenova, 3", "cp": "15100", "localidad": "Carballo", "provincia": "A Coruña" },
+  "mapa_consulta": "Carballo, A Coruña",
+  "aparcamiento": null,
+  "pagos": "Efectivo y tarjeta.",
+
+  "telefono": "981 11 11 11",
+  "whatsapp": null,
+  "email": "arxila@ejemplo.com",
+  "cita": { "via": "telefono" },
+
+  "horario": {
+    "lunes": [["10:00", "13:30"], ["17:00", "20:00"]],
+    "martes": [["10:00", "13:30"], ["17:00", "20:00"]],
+    "miercoles": [["10:00", "13:30"]],
+    "jueves": [["10:00", "13:30"], ["17:00", "20:00"]],
+    "viernes": [["10:00", "13:30"], ["17:00", "20:00"]],
+    "sabado": [],
+    "domingo": []
+  },
+  "cierres": [],
+
+  "especies": ["perro", "gato"],
+
+  "servicios": [
+    { "id": "consulta", "activo": true, "titulo": "Consulta", "texto": "Revisiones y seguimiento de perros y gatos de todas las edades.", "incluye": ["Revisión anual", "Animales mayores"] },
+    { "id": "vacunas", "activo": true, "titulo": "Vacunas", "texto": "Vacunación, desparasitación y microchip con recordatorio.", "incluye": ["Calendario completo", "Microchip"] },
+    { "id": "cirugia", "activo": true, "titulo": "Esterilización", "texto": "Esterilización de perras y gatas con cita previa.", "incluye": ["Estudio previo", "Revisión posterior"] }
+  ],
+
+  "urgencias": { "modo": "ninguno" },
+
+  "primera_visita": [],
+
+  "equipo": [
+    { "nombre": "Manuela Souto Rial", "cargo": "Veterinaria", "colegiado": "Col. 15/0003", "foto": null }
+  ],
+
+  "instalaciones": [],
+
+  "resenas": {
+    "nota": 5.0,
+    "recuento": 8,
+    "plataforma": null,
+    "enlace": null,
+    "citas": [
+      { "texto": "Cercanos y claros. Mi gata sale más tranquila que entra.", "autor": "Rosa", "detalle": "Nube, gata" },
+      { "texto": "Nos atendieron a primera hora sin hacernos esperar.", "autor": "Anxo", "detalle": "Coco, mestizo" }
+    ]
+  },
+
+  "preguntas": [
+    { "p": "¿Hace falta pedir cita?", "r": "Sí, llama y te damos hora el mismo día si hay hueco." }
+  ],
+
+  "redes": { "instagram": null, "facebook": null },
+
+  "legal": { "titular": "Manuela Souto Rial", "nif": "00000000T", "registro": null, "responsable_clinico": null },
+
+  "modulos": { "marquee": true, "urgencias": false, "primera_visita": false, "equipo": true, "instalaciones": false, "resenas": true, "preguntas": true }
+}

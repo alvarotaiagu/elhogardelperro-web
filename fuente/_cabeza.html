@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{{#robots_no}}<meta name="robots" content="noindex, nofollow">
+{{/robots_no}}<meta name="theme-color" content="{{marca.color_tema}}">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" id="fuentes" href="{{marca.fuentes_url}}">
+<link rel="stylesheet" id="hoja-marca" href="css/marca.css?v={{v.marca}}">
+<link rel="stylesheet" href="css/base.css?v={{v.base}}">
+<script>
+/* Bloqueante a propósito: todo lo que cambia el aspecto se resuelve antes del
+   primer pintado, o la página arranca de una forma y salta a otra.
+   Lo que va entre las marcas del mando lo borra scripts/quitar_mandos.py. */
+(function () {
+  var h = document.documentElement;
+  h.classList.remove('sin-js');
+  h.classList.add('con-js');
+  /* [MANDO DE MAQUETA] inicio */
+  /* lo guardado solo cuenta en modo revisión (?revision): si no, un navegador
+     donde se probó otra versión la seguiría viendo sin mando para volver */
+  if (!/[?&]revision\b/.test(location.search)) return;
+  try {
+    var d = localStorage.getItem('{{marca.slug_demo}}-densidad');
+    if (d === 'sobria' || d === 'marca') { h.classList.remove('densidad-marca', 'densidad-sobria'); h.classList.add('densidad-' + d); }
+    var p = localStorage.getItem('{{marca.slug_demo}}-paleta');
+    if (p === 'a' || p === 'b' || p === 'c') h.setAttribute('data-paleta', p);
+  } catch (e) {}
+  /* [MANDO DE MAQUETA] fin */
+})();
+</script>

@@ -1,0 +1,83 @@
+{
+  "_leeme": "Negocio de PRUEBA para el test de reskin (scripts/verificar.mjs §8): urgencias 24 h, horario continuo, cinco especies, con fotos y con recuento de reseñas.",
+
+  "demo": true,
+  "indexar": false,
+  "idioma": "es",
+  "url": "https://alvarotaiagu.github.io/plantilla-veterinaria-web/",
+
+  "nombre": "O Corzo Hospital Veterinario",
+  "nombre_corto": "O Corzo",
+  "lema": "Abiertos día y noche para lo que no puede esperar.",
+  "entradilla": "Hospital veterinario con quirófano, hospitalización y un equipo de guardia todo el año.",
+  "anio_apertura": 2016,
+
+  "direccion": { "calle": "Avenida do Bosque, 40", "cp": "15960", "localidad": "Ribeira", "provincia": "A Coruña" },
+  "mapa_consulta": "Ribeira, A Coruña",
+  "aparcamiento": "Aparcamiento propio para clientes.",
+  "pagos": "Tarjeta, Bizum y financiación.",
+
+  "telefono": "981 22 22 22",
+  "whatsapp": { "numero": "600 22 22 22", "confirmado": true },
+  "email": "corzo@ejemplo.com",
+  "cita": { "via": "whatsapp" },
+
+  "horario": {
+    "lunes": [["08:00", "22:00"]],
+    "martes": [["08:00", "22:00"]],
+    "miercoles": [["08:00", "22:00"]],
+    "jueves": [["08:00", "22:00"]],
+    "viernes": [["08:00", "22:00"]],
+    "sabado": [["09:00", "21:00"]],
+    "domingo": [["10:00", "14:00"]]
+  },
+  "cierres": [],
+
+  "especies": ["perro", "gato", "conejo", "ave", "reptil"],
+
+  "servicios": [
+    { "id": "consulta", "activo": true, "titulo": "Medicina interna", "texto": "Diagnóstico y seguimiento de casos complejos.", "incluye": ["Cardiología", "Dermatología"] },
+    { "id": "cirugia", "activo": true, "titulo": "Cirugía", "texto": "Dos quirófanos para cirugía general y traumatología.", "incluye": ["Traumatología", "Tejidos blandos"] },
+    { "id": "hospitalizacion", "activo": true, "titulo": "Hospitalización", "texto": "Boxes separados por especie y vigilancia continua.", "incluye": ["UCI", "Parte diario"] },
+    { "id": "imagen", "activo": true, "titulo": "Diagnóstico por imagen", "texto": "Radiología, ecografía y endoscopia en el hospital.", "incluye": ["Ecografía", "Endoscopia"] }
+  ],
+
+  "urgencias": { "modo": "24h", "telefono": "600 22 22 23" },
+
+  "primera_visita": [
+    { "titulo": "Llama o escribe", "texto": "Te damos cita o te decimos si conviene venir ya." },
+    { "titulo": "Trae su historial", "texto": "Informes, analíticas y la medicación que toma." },
+    { "titulo": "Te lo explicamos", "texto": "Sales con un plan por escrito y un teléfono al que llamar." }
+  ],
+
+  "equipo": [
+    { "nombre": "Sabela Otero Lema", "cargo": "Directora clínica", "colegiado": "Col. 15/0004", "foto": null },
+    { "nombre": "Roi Méndez Vidal", "cargo": "Cirugía", "colegiado": "Col. 15/0005", "foto": null },
+    { "nombre": "Lois Pazos Rey", "cargo": "Urgencias", "colegiado": "Col. 15/0006", "foto": null }
+  ],
+
+  "instalaciones": [
+    { "foto": "media/instalaciones-1.jpg", "alt": "Consulta del hospital", "pie": "Consulta" },
+    { "foto": "media/instalaciones-3.jpg", "alt": "Equipo de diagnóstico", "pie": "Diagnóstico" }
+  ],
+
+  "resenas": {
+    "nota": 4.6,
+    "recuento": 64,
+    "plataforma": null,
+    "enlace": null,
+    "citas": [
+      { "texto": "Nos atendieron a las tres de la mañana como si fueran las diez.", "autor": "Pablo", "detalle": "Kira, pastora alemana" }
+    ]
+  },
+
+  "preguntas": [
+    { "p": "¿Abrís de noche?", "r": "Sí: fuera del horario de consulta hay un veterinario de guardia en el hospital." }
+  ],
+
+  "redes": { "instagram": null, "facebook": null },
+
+  "legal": { "titular": "O Corzo Servizos Veterinarios, S. L.", "nif": "B11111111", "registro": null, "responsable_clinico": null },
+
+  "modulos": { "marquee": true, "urgencias": true, "primera_visita": true, "equipo": true, "instalaciones": true, "resenas": true, "preguntas": true }
+}

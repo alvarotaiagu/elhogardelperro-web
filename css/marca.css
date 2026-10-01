@@ -1,0 +1,67 @@
+/* GENERADO por scripts/aplicar.mjs desde marca/marca.json.
+   No editar a mano. Es el ÚNICO archivo con colores y fuentes de la marca. */
+:root {
+  --fondo: #F1F7FF;
+  --superficie: #E2ECFA;
+  --superficie-2: #D7E2F0;
+  --tinta: #0D1D32;
+  --apagado: #5B6778;
+  --linea: #CDD4DE;
+  --linea-fuerte: #A3ADB9;
+  --acento: #265691;
+  --acento-2: #A6C7F1;
+  --acento-texto: #265691;
+  --boton: #265691;
+  --sobre-boton: #FFFFFF;
+  --sobre-acento: #FFFFFF;
+  --banda: #0D1D32;
+  --sobre-banda: #F1F7FF;
+  --apagado-banda: #7F8A98;
+  --acento-banda: #678AB4;
+  --linea-banda: #364457;
+  --cortina: #0D1D32;
+  --sobre-cortina: #678AB4;
+  --foto-luz: #D9EAFE;
+  --foto-sombra: #021630;
+  --sombra-color: #070F19;
+  --foco: #265691;
+  --muestra-a: #265691;
+  --muestra-b: #883741;
+  --muestra-c: #39621C;
+  --f-display: 'Fredoka', 'Trebuchet MS', system-ui, sans-serif;
+  --f-texto: 'Figtree', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --peso-display: 600;
+  --tracking-display: -0.01em;
+  --escala-display: 1.008;
+  --ancho-letra: 0.444;
+  --ventana-aspecto: 493.249 / 413.176;
+  --logo-aspecto: 757.03 / 165.1;
+}
+:root[data-paleta="b"] {
+  --acento: #883741;
+  --acento-2: #EEB2B6;
+  --acento-texto: #883741;
+  --boton: #883741;
+  --sobre-boton: #FFFFFF;
+  --sobre-acento: #FFFFFF;
+  --acento-banda: #AC7882;
+  --cortina: #0D1D32;
+  --sobre-cortina: #AC7882;
+  --foto-luz: #FEDFE1;
+  --foto-sombra: #021630;
+  --foco: #883741;
+}
+:root[data-paleta="c"] {
+  --acento: #39621C;
+  --acento-2: #B1CFA1;
+  --acento-texto: #39621C;
+  --boton: #39621C;
+  --sobre-boton: #FFFFFF;
+  --sobre-acento: #FFFFFF;
+  --acento-banda: #708F60;
+  --cortina: #0D1D32;
+  --sobre-cortina: #708F60;
+  --foto-luz: #DDEED5;
+  --foto-sombra: #021630;
+  --foco: #39621C;
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- GENERADO por scripts/aplicar.mjs desde fuente/404.html. No editar a mano. -->
+<html lang="{{idioma}}" class="sin-js densidad-{{marca.densidad}} pagina-legal" data-personalidad="{{marca.personalidad}}" data-fondo="{{marca.polaridad}}" data-logo-oscuro="{{marca.logo_oscuro}}" data-duotono="{{marca.duotono}}" data-paleta="a" data-marca="{{marca.slug}}">
+<head>
+{{! la 404 se sirve en cualquier ruta: sin <base>, css/ y js/ se resolverían contra ella }}
+{{#base_404}}<base href="{{base_404}}">{{/base_404}}
+{{> cabeza}}
+<title>Página no encontrada · {{nombre}}</title>
+<meta name="description" content="Esta página no existe.">
+</head>
+<body>
+<a class="salto-contenido" href="#contenido">Saltar al contenido</a>
+<svg class="sprite" aria-hidden="true" focusable="false" width="0" height="0">
+{{> iconos}}
+{{{sprite}}}
+</svg>
+{{> cabecera}}
+<main id="contenido" class="perdida">
+  <svg class="perdida__marca" viewBox="{{marca.isotipo_vb}}" aria-hidden="true"><use href="#isotipo-{{marca.slug}}"/></svg>
+  <p class="rotulo">Error 404</p>
+  <h1 class="perdida__titulo">Esta página se ha escapado.</h1>
+  <p class="perdida__texto">Puede que el enlace esté mal escrito o que la página ya no exista. Desde el inicio encuentras todo: servicios, horario y cómo llegar.</p>
+  <div class="perdida__acciones">
+    <a class="boton boton--cita" href="index.html"><span>Volver al inicio</span><svg width="18" height="18" aria-hidden="true"><use href="#i-flecha"/></svg></a>
+    <a class="enlace" href="{{tel_href}}">Llamar al {{telefono}}</a>
+  </div>
+</main>
+{{> pie}}
+<script type="application/json" id="datos-negocio">{{{datos_json}}}</script>
+<script src="js/main.js?v={{v.main}}" defer></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+/* GENERADO por scripts/aplicar.mjs desde marca/pruebas/arxila/marca.json.
+   No editar a mano. Es el ÚNICO archivo con colores y fuentes de la marca. */
+:root {
+  --fondo: #FEFCFB;
+  --superficie: #F8F1EF;
+  --superficie-2: #EEE7E5;
+  --tinta: #2B2522;
+  --apagado: #6F6A67;
+  --linea: #DCDAD8;
+  --linea-fuerte: #B6B3B1;
+  --acento: #B83A2B;
+  --acento-2: #EEB4A9;
+  --acento-texto: #B83A2B;
+  --boton: #B83A2B;
+  --sobre-boton: #FFFFFF;
+  --sobre-acento: #FFFFFF;
+  --banda: #2B2522;
+  --sobre-banda: #FEFCFB;
+  --apagado-banda: #94908E;
+  --acento-banda: #CE786E;
+  --linea-banda: #514C49;
+  --cortina: #2B2522;
+  --sobre-cortina: #CE786E;
+  --foto-luz: #FEE0DA;
+  --foto-sombra: #22110E;
+  --sombra-color: #161311;
+  --foco: #B83A2B;
+  --muestra-a: #B83A2B;
+  --muestra-b: #0A823C;
+  --muestra-c: #4961CA;
+  --f-display: 'Schibsted Grotesk', Arial, system-ui, sans-serif;
+  --f-texto: 'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --peso-display: 600;
+  --tracking-display: -0.03em;
+  --escala-display: 0.97;
+  --ancho-letra: 0.434;
+  --ventana-aspecto: 100 / 100;
+  --logo-aspecto: 490.518 / 116.118;
+}
+:root[data-paleta="b"] {
+  --acento: #0A823C;
+  --acento-2: #A4D2AD;
+  --acento-texto: #0B7E3B;
+  --boton: #0A823C;
+  --sobre-boton: #FFFFFF;
+  --sobre-acento: #FFFFFF;
+  --acento-banda: #459F6A;
+  --cortina: #2B2522;
+  --sobre-cortina: #459F6A;
+  --foto-luz: #D1F2D7;
+  --foto-sombra: #0B1A0F;
+  --foco: #0A823C;
+}
+:root[data-paleta="c"] {
+  --acento: #4961CA;
+  --acento-2: #B3C2F2;
+  --acento-texto: #4961CA;
+  --boton: #4961CA;
+  --sobre-boton: #FFFFFF;
+  --sobre-acento: #FFFFFF;
+  --acento-banda: #7C8CD8;
+  --cortina: #2B2522;
+  --sobre-cortina: #7C8CD8;
+  --foto-luz: #DFE7FE;
+  --foto-sombra: #111524;
+  --foco: #4961CA;
+}

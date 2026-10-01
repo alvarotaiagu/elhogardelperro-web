@@ -1,0 +1,88 @@
+{
+  "_leeme": "Parejas tipográficas cerradas. marca.json elige una por su clave. «escala» y «ancho» los mide scripts/medir-parejas.mjs: escala iguala el tamaño visual entre parejas (altura de x) y ancho es el avance medio por carácter en em, que usa el titular del hero para no desbordar. No editar a mano.",
+  "redondeada": {
+    "nombre": "Redondeada cercana",
+    "display": {
+      "familia": "Fredoka",
+      "google": "Fredoka:wght@500;600",
+      "peso": 600,
+      "respaldo": "'Trebuchet MS', system-ui, sans-serif",
+      "tracking": "-0.01em"
+    },
+    "texto": {
+      "familia": "Figtree",
+      "google": "Figtree:wght@400;500;600;700",
+      "respaldo": "system-ui, -apple-system, 'Segoe UI', sans-serif"
+    },
+    "escala": 1.008,
+    "ancho": 0.444
+  },
+  "serif-calida": {
+    "nombre": "Serif cálida",
+    "display": {
+      "familia": "Young Serif",
+      "google": "Young+Serif",
+      "peso": 400,
+      "respaldo": "Georgia, 'Times New Roman', serif",
+      "tracking": "-0.02em"
+    },
+    "texto": {
+      "familia": "Onest",
+      "google": "Onest:wght@400;500;600;700",
+      "respaldo": "system-ui, -apple-system, 'Segoe UI', sans-serif"
+    },
+    "escala": 1.028,
+    "ancho": 0.508
+  },
+  "grotesca-clinica": {
+    "nombre": "Grotesca clínica",
+    "display": {
+      "familia": "Schibsted Grotesk",
+      "google": "Schibsted+Grotesk:wght@500;600;700",
+      "peso": 600,
+      "respaldo": "Arial, system-ui, sans-serif",
+      "tracking": "-0.03em"
+    },
+    "texto": {
+      "familia": "Public Sans",
+      "google": "Public+Sans:wght@400;500;600;700",
+      "respaldo": "system-ui, -apple-system, 'Segoe UI', sans-serif"
+    },
+    "escala": 0.97,
+    "ancho": 0.434
+  },
+  "geometrica-moderna": {
+    "nombre": "Geométrica moderna",
+    "display": {
+      "familia": "Unbounded",
+      "google": "Unbounded:wght@500;600;700",
+      "peso": 600,
+      "respaldo": "'Arial Black', system-ui, sans-serif",
+      "tracking": "-0.03em"
+    },
+    "texto": {
+      "familia": "Manrope",
+      "google": "Manrope:wght@400;500;600;700",
+      "respaldo": "system-ui, -apple-system, 'Segoe UI', sans-serif"
+    },
+    "escala": 0.902,
+    "ancho": 0.533
+  },
+  "humanista-seria": {
+    "nombre": "Humanista seria",
+    "display": {
+      "familia": "Alegreya",
+      "google": "Alegreya:wght@500;700",
+      "peso": 500,
+      "respaldo": "Georgia, 'Times New Roman', serif",
+      "tracking": "-0.01em"
+    },
+    "texto": {
+      "familia": "Alegreya Sans",
+      "google": "Alegreya+Sans:wght@400;500;700",
+      "respaldo": "system-ui, -apple-system, 'Segoe UI', sans-serif"
+    },
+    "escala": 1.117,
+    "ancho": 0.449
+  }
+}

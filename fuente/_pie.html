@@ -1,0 +1,37 @@
+<footer class="pie zona-oscura">
+  <div class="pie__marca">
+    <span class="logo logo--pie" aria-hidden="true">
+      <svg class="logo__original" viewBox="{{marca.logo_vb}}" data-vb="logo"><use href="#logo-{{marca.slug}}" data-uso="logo"/></svg>
+      <svg class="logo__mono" viewBox="{{marca.logo_vb}}" data-vb="logo"><use href="#logo-mono-{{marca.slug}}" data-uso="logo-mono"/></svg>
+    </span>
+    <p class="pie__lema">{{lema}}</p>
+  </div>
+  <div class="pie__columna">
+    <h2>Dónde</h2>
+    <p>{{direccion.calle}}<br>{{direccion.cp}} {{direccion.localidad}} ({{direccion.provincia}})</p>
+    <p><a href="{{como_llegar_url}}" target="_blank" rel="noopener">Cómo llegar</a></p>
+  </div>
+  <div class="pie__columna">
+    <h2>Contacto</h2>
+    <p><a href="{{tel_href}}">{{telefono}}</a></p>
+    {{#wa}}<p><a href="{{wa.href}}" target="_blank" rel="noopener">WhatsApp {{wa.numero}}</a></p>{{/wa}}
+    <p><a href="mailto:{{email}}">{{email}}</a></p>
+    {{#urg.telefono_visible}}<p>Urgencias: <a href="{{urg.tel_href}}">{{urg.telefono}}</a></p>{{/urg.telefono_visible}}
+  </div>
+  <div class="pie__columna">
+    <h2>Horario</h2>
+    {{#horario_resumen}}<p>{{.}}</p>{{/horario_resumen}}
+    {{#redes_lista.length}}<p class="pie__redes">{{#redes_lista}}<a href="{{url}}" target="_blank" rel="noopener" aria-label="{{nombre}}"><svg width="20" height="20" aria-hidden="true"><use href="#{{icono}}"/></svg></a>{{/redes_lista}}</p>{{/redes_lista.length}}
+  </div>
+  <div class="pie__legal">
+    <p>© <span data-anio>{{anio_actual}}</span> {{legal.titular}}</p>
+    <p><a href="aviso-legal.html">Aviso legal</a></p>
+    <p><a href="privacidad.html">Privacidad y cookies</a></p>
+    {{#demo}}<p class="pie__sello">Sitio de demostración. {{nombre}} es un negocio ficticio; los datos, fotografías y opiniones son de muestra.</p>{{/demo}}
+  </div>
+</footer>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p class="cookies__texto">Esta web no usa cookies de seguimiento. Solo guarda en tu navegador que has visto este aviso. El mapa de Google se carga únicamente si pulsas el botón. <a href="privacidad.html">Más información</a>.</p>
+  <div class="cookies__acciones"><button class="boton boton--mini" id="cookies-aceptar" type="button">Entendido</button></div>
+</div>

@@ -1,0 +1,19 @@
+{
+  "_leeme": "Marca de PRUEBA: sirve al mando «Con otro logo» y al test de reskin. No es un cliente.",
+  "slug": "arxila",
+  "nombre": "Clínica Veterinaria Arxila",
+  "nombre_corto": "Arxila",
+  "personalidad": "clinica",
+  "pareja": "grotesca-clinica",
+  "colores": {
+    "fondo": "#FEFCFB",
+    "superficie": "#F8F1EF",
+    "tinta": "#2B2522",
+    "acento": "#B83A2B",
+    "acento2": "#EEB4A9"
+  },
+  "logo_en_oscuro": "mono",
+  "densidad": "marca",
+  "duotono": true,
+  "forma_hero": "isotipo"
+}

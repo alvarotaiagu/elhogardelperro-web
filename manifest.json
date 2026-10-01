@@ -1,0 +1,15 @@
+{
+  "name": "Centro Veterinario El Hogar del Perro",
+  "short_name": "El Hogar del Perro",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#F1F7FF",
+  "theme_color": "#F1F7FF",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
